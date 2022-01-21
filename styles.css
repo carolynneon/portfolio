@@ -31,9 +31,113 @@ ul {
     list-style-type: square;
 }
 
-.help {
-    width: 475px;
+.help p {
     margin: 20px auto;
+    text-align: center;
+}
+
+.bullets {
+    display: flex;
+    justify-content: center;
+}
+
+.bullets li {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #9FD6A5;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#about {
+    margin-left: auto;
+    align-self: flex-end;
+}
+
+#menu li {
+    border-right: 1px solid #325A4A;
+}
+  
+#menu li:last-child {
+    border-left: 1px solid #325A4A;
+    border-right: none;
+}
+
+#menu li a {
+    display: block;
+    text-align: center;
+    color: #325A4A;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    #menu {
+        justify-content: space-around;
+    }
+
+    #about {
+        margin-left: 0;
+        align-self: inherit;
+    }
+
+    #menu li {
+        border-right: 1px solid #325A4A;
+        width: 25%;
+    }
+      
+    #menu li:last-child {
+        border-left: none;
+        border-right: none;
+    }
+
+    .bullets {
+        display: block;
+        text-align: center;
+        list-style-position: inside;
+    }
+
+    .help {
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+  
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    .help {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    .content {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .content .help {
+        width: 50%;
+    }
+}
+
+#experience {
+    background-color: #123A2A;
 }
 
 a:link {
@@ -70,29 +174,6 @@ hr {
     border-style: groove;
 }
 
-#menu {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #9FD6A5;
-}
-
-#menu li {
-    float: left;
-}
-
-#menu li a {
-    display: block;
-    text-align: center;
-    color: #325A4A;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
 #menu li a:hover {
     background-color: #325A4A;
     color: #DDDAD0;
@@ -101,13 +182,4 @@ hr {
 #menu li .active {
     background-color: #FB9E78;
     color: white;
-}
-
-#menu li {
-    border-right: 1px solid #325A4A;
-}
-  
-#menu li:last-child {
-    border-left: 1px solid #325A4A;
-    border-right: none;
 }
